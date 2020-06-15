@@ -1,7 +1,7 @@
 //
 // Buttons
 //
-import { defineComponent } from 'vue'
+
 import { BvPlugin, BvComponent } from '../../'
 
 // Plugin
