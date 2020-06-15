@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 
 const NAME = 'BFormSelectOption'
@@ -15,7 +15,7 @@ export const props = {
 }
 
 // @vue/component
-export const BFormSelectOption = /*#__PURE__*/ Vue.extend({
+export const BFormSelectOption = /*#__PURE__*/ defineComponent({
   name: NAME,
   functional: true,
   props,

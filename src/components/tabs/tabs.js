@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import identity from '../../utils/identity'
 import KeyCodes from '../../utils/key-codes'
 import looseEqual from '../../utils/loose-equal'
@@ -28,7 +28,7 @@ const notDisabled = tab => !tab.disabled
 // --- Helper components ---
 
 // @vue/component
-const BTabButtonHelper = /*#__PURE__*/ Vue.extend({
+const BTabButtonHelper = /*#__PURE__*/ defineComponent({
   name: 'BTabButtonHelper',
   inject: {
     bvTabs: {
@@ -147,7 +147,7 @@ const BTabButtonHelper = /*#__PURE__*/ Vue.extend({
 })
 
 // @vue/component
-export const BTabs = /*#__PURE__*/ Vue.extend({
+export const BTabs = /*#__PURE__*/ defineComponent({
   name: 'BTabs',
   mixins: [idMixin, normalizeSlotMixin],
   provide() {

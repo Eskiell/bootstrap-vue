@@ -1,5 +1,5 @@
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
-import Vue from '../../utils/vue'
 import KeyCodes from '../../utils/key-codes'
 import { concat } from '../../utils/array'
 import { getComponentConfig } from '../../utils/config'
@@ -142,7 +142,7 @@ const computeAttrs = (props, data) => {
 
 // --- Main component ---
 // @vue/component
-export const BButton = /*#__PURE__*/ Vue.extend({
+export const BButton = /*#__PURE__*/ defineComponent({
   name: NAME,
   functional: true,
   props,

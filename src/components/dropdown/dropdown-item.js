@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { requestAF } from '../../utils/dom'
 import { omit } from '../../utils/object'
 import attrsMixin from '../../mixins/attrs'
@@ -8,7 +8,7 @@ import { BLink, props as BLinkProps } from '../link/link'
 export const props = omit(BLinkProps, ['event', 'routerTag'])
 
 // @vue/component
-export const BDropdownItem = /*#__PURE__*/ Vue.extend({
+export const BDropdownItem = /*#__PURE__*/ defineComponent({
   name: 'BDropdownItem',
   mixins: [attrsMixin, normalizeSlotMixin],
   inheritAttrs: false,

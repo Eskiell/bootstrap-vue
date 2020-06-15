@@ -1,6 +1,6 @@
+import { defineComponent } from '../../utils/vue'
 import { Portal, Wormhole } from 'portal-vue'
 import BVTransition from '../../utils/bv-transition'
-import Vue from '../../utils/vue'
 import { BvEvent } from '../../utils/bv-event.class'
 import { getComponentConfig } from '../../utils/config'
 import { requestAF } from '../../utils/dom'
@@ -106,7 +106,7 @@ export const props = {
 }
 
 // @vue/component
-export const BToast = /*#__PURE__*/ Vue.extend({
+export const BToast = /*#__PURE__*/ defineComponent({
   name: NAME,
   mixins: [attrsMixin, idMixin, listenOnRootMixin, normalizeSlotMixin, scopedStyleAttrsMixin],
   inheritAttrs: false,

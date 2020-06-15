@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { getComponentConfig } from '../../utils/config'
 import { attemptFocus, isVisible } from '../../utils/dom'
 import { isUndefinedOrNull } from '../../utils/inspect'
@@ -42,7 +42,7 @@ const sanitizeTotalRows = val => mathMax(toInteger(val) || DEFAULT_TOTAL_ROWS, 0
 
 // The render function is brought in via the `paginationMixin`
 // @vue/component
-export const BPagination = /*#__PURE__*/ Vue.extend({
+export const BPagination = /*#__PURE__*/ defineComponent({
   name: NAME,
   mixins: [paginationMixin],
   props,

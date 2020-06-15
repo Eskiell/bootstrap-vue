@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 import { kebabCase, pascalCase, trim } from '../../utils/string'
 import { commonIconProps, BVIconBase } from './icon-base'
@@ -17,7 +17,7 @@ export const makeIcon = (name, content) => {
   const iconNameClass = `bi-${kebabCase(name)}`
   const svgContent = trim(content || '')
   // Return the icon component definition
-  return /*#__PURE__*/ Vue.extend({
+  return /*#__PURE__*/ defineComponent({
     name: iconName,
     functional: true,
     props: {

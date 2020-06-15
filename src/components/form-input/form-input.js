@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { arrayIncludes } from '../../utils/array'
 import { attemptBlur } from '../../utils/dom'
 import { eventOn, eventOff, eventOnOff } from '../../utils/events'
@@ -31,7 +31,7 @@ const TYPES = [
 ]
 
 // @vue/component
-export const BFormInput = /*#__PURE__*/ Vue.extend({
+export const BFormInput = /*#__PURE__*/ defineComponent({
   name: 'BFormInput',
   // Mixin order is important!
   mixins: [

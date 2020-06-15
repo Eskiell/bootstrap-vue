@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import KeyCodes from '../../utils/key-codes'
 import BVTransition from '../../utils/bv-transition'
 import { attemptFocus, contains, getActiveElement, getTabables } from '../../utils/dom'
@@ -129,7 +129,7 @@ const renderBackdrop = (h, ctx) => {
 
 // --- Main component ---
 // @vue/component
-export const BSidebar = /*#__PURE__*/ Vue.extend({
+export const BSidebar = /*#__PURE__*/ defineComponent({
   name: NAME,
   // Mixin order is important!
   mixins: [attrsMixin, idMixin, listenOnRootMixin, normalizeSlotMixin],

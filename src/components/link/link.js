@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { concat } from '../../utils/array'
 import { getComponentConfig } from '../../utils/config'
 import { attemptBlur, attemptFocus } from '../../utils/dom'
@@ -105,7 +105,7 @@ export const props = {
 
 // --- Main component ---
 // @vue/component
-export const BLink = /*#__PURE__*/ Vue.extend({
+export const BLink = /*#__PURE__*/ defineComponent({
   name: 'BLink',
   // Mixin order is important!
   mixins: [attrsMixin, listenersMixin, normalizeSlotMixin],

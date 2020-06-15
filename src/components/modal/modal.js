@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import BVTransition from '../../utils/bv-transition'
 import KeyCodes from '../../utils/key-codes'
 import identity from '../../utils/identity'
@@ -265,7 +265,7 @@ export const props = {
 }
 
 // @vue/component
-export const BModal = /*#__PURE__*/ Vue.extend({
+export const BModal = /*#__PURE__*/ defineComponent({
   name: NAME,
   mixins: [
     attrsMixin,

@@ -1,7 +1,7 @@
-import Vue from '../../utils/vue'
-import KeyCodes from '../../utils/key-codes'
+import { defineComponent } from '../../utils/vue'
 import { attemptFocus, isVisible, selectAll } from '../../utils/dom'
 import normalizeSlotMixin from '../../mixins/normalize-slot'
+import KeyCodes from '../../utils/key-codes'
 
 const ITEM_SELECTOR = [
   '.btn:not(.disabled):not([disabled]):not(.dropdown-item)',
@@ -12,7 +12,7 @@ const ITEM_SELECTOR = [
 ].join(',')
 
 // @vue/component
-export const BButtonToolbar = /*#__PURE__*/ Vue.extend({
+export const BButtonToolbar = /*#__PURE__*/ defineComponent({
   name: 'BButtonToolbar',
   mixins: [normalizeSlotMixin],
   props: {

@@ -1,5 +1,5 @@
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
-import Vue from '../../utils/vue'
 import { copyProps, pluckProps, prefixPropName } from '../../utils/props'
 import cardMixin from '../../mixins/card'
 import { BCardTitle, props as titleProps } from './card-title'
@@ -21,7 +21,7 @@ export const props = {
 }
 
 // @vue/component
-export const BCardBody = /*#__PURE__*/ Vue.extend({
+export const BCardBody = /*#__PURE__*/ defineComponent({
   name: 'BCardBody',
   functional: true,
   props,

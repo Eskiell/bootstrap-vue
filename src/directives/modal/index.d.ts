@@ -1,11 +1,11 @@
 //
 // VBModal
 //
-import Vue, { DirectiveOptions } from 'vue'
+import { DirectiveArguments } from 'vue'
 import { BvPlugin } from '../../'
 
 // Plugin
 export declare const VBModalPlugin: BvPlugin
 
 // directive: v-b-modal
-export declare const VBModal: DirectiveOptions
+export declare const VBModal: DirectiveArguments

@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import KeyCodes from '../../utils/key-codes'
 import identity from '../../utils/identity'
 import { arrayIncludes, concat } from '../../utils/array'
@@ -37,7 +37,7 @@ const DEFAULT_REPEAT_MULTIPLIER = 4
 
 // --- BFormSpinbutton ---
 // @vue/component
-export const BFormSpinbutton = /*#__PURE__*/ Vue.extend({
+export const BFormSpinbutton = /*#__PURE__*/ defineComponent({
   name: NAME,
   // Mixin order is important!
   mixins: [attrsMixin, idMixin, normalizeSlotMixin],

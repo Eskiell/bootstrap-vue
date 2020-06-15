@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 
 export const props = {
@@ -9,7 +9,7 @@ export const props = {
 }
 
 // @vue/component
-export const BMediaBody = /*#__PURE__*/ Vue.extend({
+export const BMediaBody = /*#__PURE__*/ defineComponent({
   name: 'BMediaBody',
   functional: true,
   props,

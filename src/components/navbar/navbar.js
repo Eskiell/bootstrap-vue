@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { getComponentConfig, getBreakpoints } from '../../utils/config'
 import { isTag } from '../../utils/dom'
 import { isString } from '../../utils/inspect'
@@ -42,7 +42,7 @@ export const props = {
 
 // --- Main component ---
 // @vue/component
-export const BNavbar = /*#__PURE__*/ Vue.extend({
+export const BNavbar = /*#__PURE__*/ defineComponent({
   name: NAME,
   mixins: [normalizeSlotMixin],
   props,

@@ -1,7 +1,7 @@
 //
 // Form File
 //
-import Vue from 'vue'
+import { defineComponent } from 'vue'
 import { BvPlugin, BvComponent } from '../../'
 
 // Plugin

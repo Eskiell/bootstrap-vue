@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { arrayIncludes, concat } from '../../utils/array'
 import { getComponentConfig } from '../../utils/config'
 import { attemptBlur, attemptFocus } from '../../utils/dom'
@@ -23,7 +23,7 @@ const { LEFT, RIGHT, UP, DOWN } = KeyCodes
 
 // --- Private helper component ---
 // @vue/component
-const BVFormRatingStar = Vue.extend({
+const BVFormRatingStar = defineComponent({
   name: 'BVFormRatingStar',
   mixins: [normalizeSlotMixin],
   props: {

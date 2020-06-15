@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 import { isString } from '../../utils/inspect'
 
@@ -18,7 +18,7 @@ export const props = {
 }
 
 // @vue/component
-export const BListGroup = /*#__PURE__*/ Vue.extend({
+export const BListGroup = /*#__PURE__*/ defineComponent({
   name: 'BListGroup',
   functional: true,
   props,

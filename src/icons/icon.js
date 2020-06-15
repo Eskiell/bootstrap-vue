@@ -1,4 +1,4 @@
-import Vue from '../utils/vue'
+import { defineComponent } from '../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 import { pascalCase, trim } from '../utils/string'
 import { BIconBlank } from './icons'
@@ -8,7 +8,7 @@ const RX_ICON_PREFIX = /^BIcon/
 
 // Helper BIcon component
 // Requires the requested icon component to be installed
-export const BIcon = /*#__PURE__*/ Vue.extend({
+export const BIcon = /*#__PURE__*/ defineComponent({
   name: 'BIcon',
   functional: true,
   props: {

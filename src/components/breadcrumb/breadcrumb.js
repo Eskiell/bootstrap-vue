@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 import { isArray, isObject } from '../../utils/inspect'
 import { toString } from '../../utils/string'
@@ -12,7 +12,7 @@ export const props = {
 }
 
 // @vue/component
-export const BBreadcrumb = /*#__PURE__*/ Vue.extend({
+export const BBreadcrumb = /*#__PURE__*/ defineComponent({
   name: 'BBreadcrumb',
   functional: true,
   props,

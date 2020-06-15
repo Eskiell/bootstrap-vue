@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { mathAbs } from '../../utils/math'
 import { toFloat } from '../../utils/number'
 import normalizeSlotMixin from '../../mixins/normalize-slot'
@@ -11,7 +11,7 @@ const RX_ASPECT = /^\d+(\.\d*)?[/:]\d+(\.\d*)?$/
 const RX_SEPARATOR = /[/:]/
 
 // --- Main Component ---
-export const BAspect = /*#__PURE__*/ Vue.extend({
+export const BAspect = /*#__PURE__*/ defineComponent({
   name: NAME,
   mixins: [normalizeSlotMixin],
   props: {

@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import identity from '../../utils/identity'
 import { from as arrayFrom, isArray, concat } from '../../utils/array'
 import { getComponentConfig } from '../../utils/config'
@@ -25,7 +25,7 @@ const VALUE_EMPTY_DEPRECATED_MSG =
 const isValidValue = value => isFile(value) || (isArray(value) && value.every(v => isValidValue(v)))
 
 // @vue/component
-export const BFormFile = /*#__PURE__*/ Vue.extend({
+export const BFormFile = /*#__PURE__*/ defineComponent({
   name: NAME,
   mixins: [attrsMixin, idMixin, formMixin, formStateMixin, formCustomMixin, normalizeSlotMixin],
   inheritAttrs: false,

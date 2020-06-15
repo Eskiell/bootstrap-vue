@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { BVTransition } from '../../utils/bv-transition'
 import { toFloat } from '../../utils/number'
 import normalizeSlotMixin from '../../mixins/normalize-slot'
@@ -6,7 +6,7 @@ import { BSpinner } from '../spinner/spinner'
 
 const positionCover = { top: 0, left: 0, bottom: 0, right: 0 }
 
-export const BOverlay = /*#__PURE__*/ Vue.extend({
+export const BOverlay = /*#__PURE__*/ defineComponent({
   name: 'BOverlay',
   mixins: [normalizeSlotMixin],
   props: {

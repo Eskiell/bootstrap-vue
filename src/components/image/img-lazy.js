@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import identity from '../../utils/identity'
 import { concat } from '../../utils/array'
 import { getComponentConfig } from '../../utils/config'
@@ -96,7 +96,7 @@ export const props = {
 }
 
 // @vue/component
-export const BImgLazy = /*#__PURE__*/ Vue.extend({
+export const BImgLazy = /*#__PURE__*/ defineComponent({
   name: NAME,
   directives: {
     bVisible: VBVisible

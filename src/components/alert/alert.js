@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { getComponentConfig } from '../../utils/config'
 import { requestAF } from '../../utils/dom'
 import { isBoolean } from '../../utils/inspect'
@@ -34,7 +34,7 @@ const parseShow = show => {
 const isNumericLike = value => !isNaN(toInteger(value))
 
 // @vue/component
-export const BAlert = /*#__PURE__*/ Vue.extend({
+export const BAlert = /*#__PURE__*/ defineComponent({
   name: NAME,
   mixins: [normalizeSlotMixin],
   model: {

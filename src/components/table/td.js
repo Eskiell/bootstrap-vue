@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { isTag } from '../../utils/dom'
 import { isUndefinedOrNull } from '../../utils/inspect'
 import { toInteger } from '../../utils/number'
@@ -50,7 +50,7 @@ export const props = {
 //   In Bootstrap v5, we won't need "sniffing" as table element variants properly inherit
 //   to the child elements, so this can be converted to a functional component
 // @vue/component
-export const BTd = /*#__PURE__*/ Vue.extend({
+export const BTd = /*#__PURE__*/ defineComponent({
   name: 'BTableCell',
   // Mixin order is important!
   mixins: [attrsMixin, listenersMixin, normalizeSlotMixin],

@@ -1,5 +1,5 @@
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
-import Vue from '../../utils/vue'
 import { getComponentConfig } from '../../utils/config'
 import { omit } from '../../utils/object'
 import { pluckProps } from '../../utils/props'
@@ -34,7 +34,7 @@ export const props = {
 
 // --- Main component ---
 // @vue/component
-export const BBadge = /*#__PURE__*/ Vue.extend({
+export const BBadge = /*#__PURE__*/ defineComponent({
   name: NAME,
   functional: true,
   props,

@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 import { hasNormalizedSlot, normalizeSlot } from '../../utils/normalize-slot'
 import identity from '../../utils/identity'
@@ -31,7 +31,7 @@ export const props = {
 }
 
 // @vue/component
-export const BDropdownGroup = /*#__PURE__*/ Vue.extend({
+export const BDropdownGroup = /*#__PURE__*/ defineComponent({
   name: 'BDropdownGroup',
   functional: true,
   props,

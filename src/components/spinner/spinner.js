@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 import { getComponentConfig } from '../../utils/config'
 import { normalizeSlot } from '../../utils/normalize-slot'
@@ -6,7 +6,7 @@ import { normalizeSlot } from '../../utils/normalize-slot'
 const NAME = 'BSpinner'
 
 // @vue/component
-export const BSpinner = /*#__PURE__*/ Vue.extend({
+export const BSpinner = /*#__PURE__*/ defineComponent({
   name: NAME,
   functional: true,
   props: {

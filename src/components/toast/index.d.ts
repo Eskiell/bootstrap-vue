@@ -1,7 +1,7 @@
 //
 // Toast
 //
-import Vue, { VNode } from 'vue'
+import { VNode } from 'vue'
 import { BvPlugin, BvComponent } from '../../'
 
 // Toast Plugin

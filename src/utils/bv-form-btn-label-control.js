@@ -1,7 +1,7 @@
 //
 // Private component used by `b-form-datepicker` and `b-form-timepicker`
 //
-import Vue from './vue'
+import { defineComponent } from './vue'
 import { attemptBlur, attemptFocus } from './dom'
 import { toString } from './string'
 import dropdownMixin, { commonProps } from '../mixins/dropdown'
@@ -14,7 +14,7 @@ import { BIconChevronDown } from '../icons/icons'
 export const dropdownProps = commonProps
 
 // @vue/component
-export const BVFormBtnLabelControl = /*#__PURE__*/ Vue.extend({
+export const BVFormBtnLabelControl = /*#__PURE__*/ defineComponent({
   name: 'BVFormBtnLabelControl',
   directives: {
     BHover: VBHover

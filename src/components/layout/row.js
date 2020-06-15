@@ -74,7 +74,7 @@ const generateProps = () => {
   }
 }
 
-// We do not use `Vue.extend()` here as that would evaluate the props
+// We do not use `defineComponent)` here as that would evaluate the props
 // immediately, which we do not want to happen
 // @vue/component
 export const BRow = {

@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 
 // Mixins
 import attrsMixin from '../../mixins/attrs'
@@ -29,7 +29,7 @@ import tableRendererMixin from './helpers/mixin-table-renderer'
 
 // b-table component definition
 // @vue/component
-export const BTable = /*#__PURE__*/ Vue.extend({
+export const BTable = /*#__PURE__*/ defineComponent({
   name: 'BTable',
   // Order of mixins is important!
   // They are merged from first to last, followed by this component

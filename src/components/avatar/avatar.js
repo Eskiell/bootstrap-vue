@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { getComponentConfig } from '../../utils/config'
 import { isNumber, isString, isUndefinedOrNull } from '../../utils/inspect'
 import { toFloat } from '../../utils/number'
@@ -115,7 +115,7 @@ export const computeSize = value => {
 
 // --- Main component ---
 // @vue/component
-export const BAvatar = /*#__PURE__*/ Vue.extend({
+export const BAvatar = /*#__PURE__*/ defineComponent({
   name: NAME,
   mixins: [normalizeSlotMixin],
   inject: {

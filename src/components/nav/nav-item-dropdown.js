@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { htmlOrText } from '../../utils/html'
 import { pluckProps } from '../../utils/props'
 import dropdownMixin from '../../mixins/dropdown'
@@ -15,7 +15,7 @@ export const props = pluckProps(
 
 // --- Main component ---
 // @vue/component
-export const BNavItemDropdown = /*#__PURE__*/ Vue.extend({
+export const BNavItemDropdown = /*#__PURE__*/ defineComponent({
   name: 'BNavItemDropdown',
   mixins: [idMixin, dropdownMixin, normalizeSlotMixin],
   props,

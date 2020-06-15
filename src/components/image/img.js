@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import identity from '../../utils/identity'
 import { concat } from '../../utils/array'
 import { getComponentConfig } from '../../utils/config'
@@ -108,7 +108,7 @@ const makeBlankImgSrc = (width, height, color) => {
 }
 
 // @vue/component
-export const BImg = /*#__PURE__*/ Vue.extend({
+export const BImg = /*#__PURE__*/ defineComponent({
   name: NAME,
   functional: true,
   props,

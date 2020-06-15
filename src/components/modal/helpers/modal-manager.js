@@ -3,7 +3,7 @@
  * Handles controlling modal stacking zIndexes and body adjustments/classes
  */
 
-import Vue from '../../../utils/vue'
+import { defineComponent } from '../../../utils/vue'
 import {
   getAttr,
   hasAttr,
@@ -33,7 +33,7 @@ const Selector = {
 }
 
 // @vue/component
-const ModalManager = /*#__PURE__*/ Vue.extend({
+const ModalManager = /*#__PURE__*/ defineComponent({
   data() {
     return {
       modals: [],

@@ -1,7 +1,7 @@
 //
 // Table
 //
-import Vue, { VNode } from 'vue'
+import { VNode } from 'vue'
 import { BvPlugin, BvComponent } from '../../'
 
 // Table Plugins

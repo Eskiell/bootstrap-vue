@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { getCS, isVisible, requestAF } from '../../utils/dom'
 import { isNull } from '../../utils/inspect'
 import { mathCeil, mathMax, mathMin } from '../../utils/math'
@@ -15,7 +15,7 @@ import listenersMixin from '../../mixins/listeners'
 import { VBVisible } from '../../directives/visible/visible'
 
 // @vue/component
-export const BFormTextarea = /*#__PURE__*/ Vue.extend({
+export const BFormTextarea = /*#__PURE__*/ defineComponent({
   name: 'BFormTextarea',
   directives: {
     'b-visible': VBVisible

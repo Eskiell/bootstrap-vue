@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { hasTouchSupport } from '../../utils/env'
 import { htmlOrText } from '../../utils/html'
 import { pluckProps, unprefixPropName } from '../../utils/props'
@@ -71,7 +71,7 @@ export const props = {
 
 // --- Main component ---
 // @vue/component
-export const BCarouselSlide = /*#__PURE__*/ Vue.extend({
+export const BCarouselSlide = /*#__PURE__*/ defineComponent({
   name: 'BCarouselSlide',
   mixins: [idMixin, normalizeSlotMixin],
   inject: {

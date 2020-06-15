@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { from as arrayFrom, isArray } from '../../utils/array'
 import { attemptBlur, attemptFocus } from '../../utils/dom'
 import { htmlOrText } from '../../utils/html'
@@ -13,7 +13,7 @@ import { BFormSelectOption } from './form-select-option'
 import { BFormSelectOptionGroup } from './form-select-option-group'
 
 // @vue/component
-export const BFormSelect = /*#__PURE__*/ Vue.extend({
+export const BFormSelect = /*#__PURE__*/ defineComponent({
   name: 'BFormSelect',
   mixins: [
     idMixin,

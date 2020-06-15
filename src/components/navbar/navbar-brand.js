@@ -1,5 +1,5 @@
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
-import Vue from '../../utils/vue'
 import { omit } from '../../utils/object'
 import { pluckProps } from '../../utils/props'
 import { BLink, props as BLinkProps } from '../link/link'
@@ -20,7 +20,7 @@ export const props = {
 
 // --- Main component ---
 // @vue/component
-export const BNavbarBrand = /*#__PURE__*/ Vue.extend({
+export const BNavbarBrand = /*#__PURE__*/ defineComponent({
   name: 'BNavbarBrand',
   functional: true,
   props,

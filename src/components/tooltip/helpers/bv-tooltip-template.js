@@ -1,4 +1,4 @@
-import Vue from '../../../utils/vue'
+import { defineComponent } from '../../../utils/vue'
 import scopedStyleAttrsMixin from '../../../mixins/scoped-style-attrs'
 import { isFunction, isUndefinedOrNull } from '../../../utils/inspect'
 import { BVPopper } from './bv-popper'
@@ -6,7 +6,7 @@ import { BVPopper } from './bv-popper'
 const NAME = 'BVTooltipTemplate'
 
 // @vue/component
-export const BVTooltipTemplate = /*#__PURE__*/ Vue.extend({
+export const BVTooltipTemplate = /*#__PURE__*/ defineComponent({
   name: NAME,
   extends: BVPopper,
   mixins: [scopedStyleAttrsMixin],

@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import KeyCodes from '../../utils/key-codes'
 import identity from '../../utils/identity'
 import looseEqual from '../../utils/loose-equal'
@@ -55,7 +55,7 @@ export const STR_NARROW = 'narrow'
 // --- BCalendar component ---
 
 // @vue/component
-export const BCalendar = Vue.extend({
+export const BCalendar = defineComponent({
   name: NAME,
   // Mixin order is important!
   mixins: [attrsMixin, idMixin, normalizeSlotMixin],

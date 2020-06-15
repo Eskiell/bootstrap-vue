@@ -1,5 +1,5 @@
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
-import Vue from '../../utils/vue'
 import { htmlOrText } from '../../utils/html'
 import { copyProps, prefixPropName } from '../../utils/props'
 import cardMixin from '../../mixins/card'
@@ -24,7 +24,7 @@ export const props = {
 
 // --- Main component ---
 // @vue/component
-export const BCardFooter = /*#__PURE__*/ Vue.extend({
+export const BCardFooter = /*#__PURE__*/ defineComponent({
   name: 'BCardFooter',
   functional: true,
   props,

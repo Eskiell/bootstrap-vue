@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 
 export const props = {
@@ -17,7 +17,7 @@ export const props = {
 }
 
 // @vue/component
-export const BDropdownHeader = /*#__PURE__*/ Vue.extend({
+export const BDropdownHeader = /*#__PURE__*/ defineComponent({
   name: 'BDropdownHeader',
   functional: true,
   props,

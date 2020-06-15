@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 
 // Mixins
 import idMixin from '../../mixins/id'
@@ -12,7 +12,7 @@ import stackedMixin from './helpers/mixin-stacked'
 
 // b-table-simple component definition
 // @vue/component
-export const BTableSimple = /*#__PURE__*/ Vue.extend({
+export const BTableSimple = /*#__PURE__*/ defineComponent({
   name: 'BTableSimple',
   // Order of mixins is important!
   // They are merged from first to last, followed by this component.

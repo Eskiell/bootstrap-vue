@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import getScopId from '../../utils/get-scope-id'
 import { isArray, arrayIncludes } from '../../utils/array'
 import { getComponentConfig } from '../../utils/config'
@@ -9,7 +9,7 @@ import { BVTooltip } from './helpers/bv-tooltip'
 const NAME = 'BTooltip'
 
 // @vue/component
-export const BTooltip = /*#__PURE__*/ Vue.extend({
+export const BTooltip = /*#__PURE__*/ defineComponent({
   name: NAME,
   props: {
     title: {

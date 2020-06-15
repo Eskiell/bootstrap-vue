@@ -1,5 +1,5 @@
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
-import Vue from '../../utils/vue'
 import { getComponentConfig } from '../../utils/config'
 import { htmlOrText } from '../../utils/html'
 import { hasNormalizedSlot, normalizeSlot } from '../../utils/normalize-slot'
@@ -41,7 +41,7 @@ export const props = {
 
 // --- Main component ---
 // @vue/component
-export const BInputGroup = /*#__PURE__*/ Vue.extend({
+export const BInputGroup = /*#__PURE__*/ defineComponent({
   name: NAME,
   functional: true,
   props,

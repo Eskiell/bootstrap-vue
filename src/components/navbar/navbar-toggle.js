@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { getComponentConfig } from '../../utils/config'
 import listenOnRootMixin from '../../mixins/listen-on-root'
 import normalizeSlotMixin from '../../mixins/normalize-slot'
@@ -11,7 +11,7 @@ const CLASS_NAME = 'navbar-toggler'
 
 // --- Main component ---
 // @vue/component
-export const BNavbarToggle = /*#__PURE__*/ Vue.extend({
+export const BNavbarToggle = /*#__PURE__*/ defineComponent({
   name: NAME,
   directives: { BToggle: VBToggle },
   mixins: [listenOnRootMixin, normalizeSlotMixin],

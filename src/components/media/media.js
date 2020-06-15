@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 import { normalizeSlot } from '../../utils/normalize-slot'
 import { BMediaBody } from './media-body'
@@ -24,7 +24,7 @@ export const props = {
 }
 
 // @vue/component
-export const BMedia = /*#__PURE__*/ Vue.extend({
+export const BMedia = /*#__PURE__*/ defineComponent({
   name: 'BMedia',
   functional: true,
   props,

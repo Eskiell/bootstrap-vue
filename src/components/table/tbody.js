@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import attrsMixin from '../../mixins/attrs'
 import listenersMixin from '../../mixins/listeners'
 import normalizeSlotMixin from '../../mixins/normalize-slot'
@@ -18,7 +18,7 @@ export const props = {
 //   In Bootstrap v5, we won't need "sniffing" as table element variants properly inherit
 //   to the child elements, so this can be converted to a functional component
 // @vue/component
-export const BTbody = /*#__PURE__*/ Vue.extend({
+export const BTbody = /*#__PURE__*/ defineComponent({
   name: 'BTbody',
   // Mixin order is important!
   mixins: [attrsMixin, listenersMixin, normalizeSlotMixin],

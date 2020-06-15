@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { getComponentConfig } from '../../utils/config'
 import { htmlOrText } from '../../utils/html'
 import { isBoolean } from '../../utils/inspect'
@@ -13,7 +13,7 @@ const NAME = 'BProgressBar'
 
 // --- Main component ---
 // @vue/component
-export const BProgressBar = /*#__PURE__*/ Vue.extend({
+export const BProgressBar = /*#__PURE__*/ defineComponent({
   name: NAME,
   mixins: [normalizeSlotMixin],
   inject: {

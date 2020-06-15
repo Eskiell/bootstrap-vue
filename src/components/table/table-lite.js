@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 
 // Mixins
 import hasListenerMixin from '../../mixins/has-listener'
@@ -19,7 +19,7 @@ import tableRendererMixin from './helpers/mixin-table-renderer'
 
 // b-table-lite component definition
 // @vue/component
-export const BTableLite = /*#__PURE__*/ Vue.extend({
+export const BTableLite = /*#__PURE__*/ defineComponent({
   name: 'BTableLite',
   // Order of mixins is important!
   // They are merged from first to last, followed by this component.

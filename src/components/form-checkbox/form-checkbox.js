@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import looseEqual from '../../utils/loose-equal'
 import looseIndexOf from '../../utils/loose-index-of'
 import { isArray } from '../../utils/inspect'
@@ -9,7 +9,7 @@ import formStateMixin from '../../mixins/form-state'
 import idMixin from '../../mixins/id'
 
 // @vue/component
-export const BFormCheckbox = /*#__PURE__*/ Vue.extend({
+export const BFormCheckbox = /*#__PURE__*/ defineComponent({
   name: 'BFormCheckbox',
   mixins: [
     formRadioCheckMixin, // Includes shared render function

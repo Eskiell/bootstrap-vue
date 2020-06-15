@@ -5,7 +5,7 @@
 //   Templates are only instantiated when shown, and destroyed when hidden
 //
 
-import Vue from '../../../utils/vue'
+import { defineComponent } from '../../../utils/vue'
 import Popper from 'popper.js'
 import { getCS, select } from '../../../utils/dom'
 import { toFloat } from '../../../utils/number'
@@ -47,7 +47,7 @@ const OffsetMap = {
 }
 
 // @vue/component
-export const BVPopper = /*#__PURE__*/ Vue.extend({
+export const BVPopper = /*#__PURE__*/ defineComponent({
   name: NAME,
   props: {
     target: {

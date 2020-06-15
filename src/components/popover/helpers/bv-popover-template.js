@@ -1,4 +1,4 @@
-import Vue from '../../../utils/vue'
+import { defineComponent } from '../../../utils/vue'
 import { isFunction, isUndefinedOrNull } from '../../../utils/inspect'
 
 import { BVTooltipTemplate } from '../../tooltip/helpers/bv-tooltip-template'
@@ -6,7 +6,7 @@ import { BVTooltipTemplate } from '../../tooltip/helpers/bv-tooltip-template'
 const NAME = 'BVPopoverTemplate'
 
 // @vue/component
-export const BVPopoverTemplate = /*#__PURE__*/ Vue.extend({
+export const BVPopoverTemplate = /*#__PURE__*/ defineComponent({
   name: NAME,
   extends: BVTooltipTemplate,
   computed: {

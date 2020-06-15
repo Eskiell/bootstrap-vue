@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import attrsMixin from '../../mixins/attrs'
 import normalizeSlotMixin from '../../mixins/normalize-slot'
 
@@ -26,7 +26,7 @@ export const props = {
 }
 
 // @vue/component
-export const BDropdownItemButton = /*#__PURE__*/ Vue.extend({
+export const BDropdownItemButton = /*#__PURE__*/ defineComponent({
   name: 'BDropdownItemButton',
   mixins: [attrsMixin, normalizeSlotMixin],
   inheritAttrs: false,

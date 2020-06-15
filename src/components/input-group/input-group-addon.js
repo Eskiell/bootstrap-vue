@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 import { BInputGroupText } from './input-group-text'
 
@@ -18,7 +18,7 @@ export const commonProps = {
 }
 
 // @vue/component
-export const BInputGroupAddon = /*#__PURE__*/ Vue.extend({
+export const BInputGroupAddon = /*#__PURE__*/ defineComponent({
   name: 'BInputGroupAddon',
   functional: true,
   props: {

@@ -1,5 +1,5 @@
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
-import Vue from '../../utils/vue'
 import { arrayIncludes } from '../../utils/array'
 import { getComponentConfig } from '../../utils/config'
 import { isTag } from '../../utils/dom'
@@ -42,7 +42,7 @@ export const props = {
 
 // --- Main component ---
 // @vue/component
-export const BListGroupItem = /*#__PURE__*/ Vue.extend({
+export const BListGroupItem = /*#__PURE__*/ defineComponent({
   name: NAME,
   functional: true,
   props,

@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 import { getComponentConfig } from '../../utils/config'
 
@@ -24,7 +24,7 @@ export const props = {
 }
 
 // @vue/component
-export const BFormText = /*#__PURE__*/ Vue.extend({
+export const BFormText = /*#__PURE__*/ defineComponent({
   name: NAME,
   functional: true,
   props,

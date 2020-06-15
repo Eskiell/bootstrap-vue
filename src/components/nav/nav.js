@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 
 // -- Constants --
@@ -52,7 +52,7 @@ const computeJustifyContent = value => {
 }
 
 // @vue/component
-export const BNav = /*#__PURE__*/ Vue.extend({
+export const BNav = /*#__PURE__*/ defineComponent({
   name: 'BNav',
   functional: true,
   props,

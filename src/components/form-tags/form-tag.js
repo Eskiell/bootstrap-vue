@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import KeyCodes from '../../utils/key-codes'
 import { getComponentConfig } from '../../utils/config'
 import idMixin from '../../mixins/id'
@@ -8,7 +8,7 @@ import { BButtonClose } from '../button/button-close'
 
 const NAME = 'BFormTag'
 
-export const BFormTag = /*#__PURE__*/ Vue.extend({
+export const BFormTag = /*#__PURE__*/ defineComponent({
   name: NAME,
   mixins: [idMixin, normalizeSlotMixin],
   props: {

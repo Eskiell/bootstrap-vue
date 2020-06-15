@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 import { toString } from '../../utils/string'
 
@@ -14,7 +14,7 @@ export const props = {
 }
 
 // @vue/component
-export const BCardTitle = /*#__PURE__*/ Vue.extend({
+export const BCardTitle = /*#__PURE__*/ defineComponent({
   name: 'BCardTitle',
   functional: true,
   props,

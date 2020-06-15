@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 import { arrayIncludes } from '../../utils/array'
 
@@ -20,7 +20,7 @@ export const props = {
 }
 
 // @vue/component
-export const BEmbed = /*#__PURE__*/ Vue.extend({
+export const BEmbed = /*#__PURE__*/ defineComponent({
   name: 'BEmbed',
   functional: true,
   props,

@@ -1,11 +1,11 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { htmlOrText } from '../../utils/html'
 import formOptionsMixin from '../../mixins/form-options'
 import normalizeSlotMixin from '../../mixins/normalize-slot'
 import { BFormSelectOption } from './form-select-option'
 
 // @vue/component
-const BFormSelectOptionGroup = /*#__PURE__*/ Vue.extend({
+const BFormSelectOptionGroup = /*#__PURE__*/ defineComponent({
   name: 'BFormSelectOptionGroup',
   mixins: [normalizeSlotMixin, formOptionsMixin],
   props: {

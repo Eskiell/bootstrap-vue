@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 import { getComponentConfig } from '../../utils/config'
 import { isEvent } from '../../utils/inspect'
@@ -26,7 +26,7 @@ const props = {
 }
 
 // @vue/component
-export const BButtonClose = /*#__PURE__*/ Vue.extend({
+export const BButtonClose = /*#__PURE__*/ defineComponent({
   name: NAME,
   functional: true,
   props,

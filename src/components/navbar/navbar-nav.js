@@ -1,5 +1,5 @@
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
-import Vue from '../../utils/vue'
 import { pluckProps } from '../../utils/props'
 import { props as BNavProps } from '../nav/nav'
 
@@ -16,7 +16,7 @@ const computeJustifyContent = value => {
 }
 
 // @vue/component
-export const BNavbarNav = /*#__PURE__*/ Vue.extend({
+export const BNavbarNav = /*#__PURE__*/ defineComponent({
   name: 'BNavbarNav',
   functional: true,
   props,

@@ -1,9 +1,9 @@
-import Vue from '../utils/vue'
+import { defineComponent } from '../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 import { commonIconProps, BVIconBase } from './helpers/icon-base'
 
 // @vue/component
-export const BIconstack = /*#__PURE__*/ Vue.extend({
+export const BIconstack = /*#__PURE__*/ defineComponent({
   name: 'BIconstack',
   functional: true,
   props: { ...commonIconProps },

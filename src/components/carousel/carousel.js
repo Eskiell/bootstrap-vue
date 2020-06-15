@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import KeyCodes from '../../utils/key-codes'
 import noop from '../../utils/noop'
 import observeDom from '../../utils/observe-dom'
@@ -69,7 +69,7 @@ const getTransitionEndEvent = el => {
 }
 
 // @vue/component
-export const BCarousel = /*#__PURE__*/ Vue.extend({
+export const BCarousel = /*#__PURE__*/ defineComponent({
   name: NAME,
   mixins: [idMixin, normalizeSlotMixin],
   provide() {

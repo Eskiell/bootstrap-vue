@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { BVCollapse } from '../../utils/bv-collapse'
 import { addClass, hasClass, removeClass, closest, matches, getCS } from '../../utils/dom'
 import { isBrowser } from '../../utils/env'
@@ -20,7 +20,7 @@ const EVENT_ACCORDION = 'bv::collapse::accordion'
 
 // --- Main component ---
 // @vue/component
-export const BCollapse = /*#__PURE__*/ Vue.extend({
+export const BCollapse = /*#__PURE__*/ defineComponent({
   name: 'BCollapse',
   mixins: [idMixin, listenOnRootMixin, normalizeSlotMixin],
   model: {

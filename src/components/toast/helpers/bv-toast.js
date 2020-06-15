@@ -2,6 +2,7 @@
  * Plugin for adding `$bvToast` property to all Vue instances
  */
 
+import { defineComponent } from '../../../utils/vue'
 import { concat } from '../../../utils/array'
 import { getComponentConfig } from '../../../utils/config'
 import { requestAF } from '../../../utils/dom'
@@ -53,7 +54,7 @@ const plugin = Vue => {
   // Create a private sub-component constructor that
   // extends BToast and self-destructs after hidden
   // @vue/component
-  const BToastPop = Vue.extend({
+  const BToastPop = defineComponent({
     name: 'BToastPop',
     extends: BToast,
     destroyed() {

@@ -1,10 +1,10 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import idMixin from '../../mixins/id'
 import normalizeSlotMixin from '../../mixins/normalize-slot'
 import BVTransition from '../../utils/bv-transition'
 
 // @vue/component
-export const BTab = /*#__PURE__*/ Vue.extend({
+export const BTab = /*#__PURE__*/ defineComponent({
   name: 'BTab',
   mixins: [idMixin, normalizeSlotMixin],
   inject: {

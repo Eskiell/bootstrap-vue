@@ -1,5 +1,5 @@
 // BTime control (not form input control)
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 // Utilities
 import identity from '../../utils/identity'
 import KeyCodes from '../../utils/key-codes'
@@ -64,7 +64,7 @@ const formatHMS = ({ hours, minutes, seconds }, requireSeconds = false) => {
 }
 
 // @vue/component
-export const BTime = /*#__PURE__*/ Vue.extend({
+export const BTime = /*#__PURE__*/ defineComponent({
   name: NAME,
   mixins: [idMixin, normalizeSlotMixin],
   model: {

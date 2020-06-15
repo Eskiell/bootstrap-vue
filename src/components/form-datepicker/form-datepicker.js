@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { arrayIncludes } from '../../utils/array'
 import { BVFormBtnLabelControl, dropdownProps } from '../../utils/bv-form-btn-label-control'
 import { getComponentConfig } from '../../utils/config'
@@ -279,7 +279,7 @@ const propsMixin = {
 // --- BFormDate component ---
 
 // @vue/component
-export const BFormDatepicker = /*#__PURE__*/ Vue.extend({
+export const BFormDatepicker = /*#__PURE__*/ defineComponent({
   name: NAME,
   // The mixins order determines the order of appearance in the props reference section
   mixins: [idMixin, propsMixin],

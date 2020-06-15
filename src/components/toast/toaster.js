@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { PortalTarget, Wormhole } from 'portal-vue'
 import { getComponentConfig } from '../../utils/config'
 import { removeClass, requestAF } from '../../utils/dom'
@@ -35,7 +35,7 @@ export const props = {
 }
 
 // @vue/component
-export const DefaultTransition = /*#__PURE__*/ Vue.extend({
+export const DefaultTransition = /*#__PURE__*/ defineComponent({
   data() {
     return {
       // Transition classes base name
@@ -66,7 +66,7 @@ export const DefaultTransition = /*#__PURE__*/ Vue.extend({
 })
 
 // @vue/component
-export const BToaster = /*#__PURE__*/ Vue.extend({
+export const BToaster = /*#__PURE__*/ defineComponent({
   name: NAME,
   props,
   data() {

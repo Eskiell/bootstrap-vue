@@ -1,10 +1,10 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { htmlOrText } from '../../utils/html'
 import formOptionsMixin from '../../mixins/form-options'
 import normalizeSlotMixin from '../../mixins/normalize-slot'
 
 // @vue/component
-export const BFormDatalist = /*#__PURE__*/ Vue.extend({
+export const BFormDatalist = /*#__PURE__*/ defineComponent({
   name: 'BFormDatalist',
   mixins: [formOptionsMixin, normalizeSlotMixin],
   props: {

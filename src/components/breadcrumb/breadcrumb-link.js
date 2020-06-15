@@ -1,5 +1,5 @@
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
-import Vue from '../../utils/vue'
 import { htmlOrText } from '../../utils/html'
 import { omit } from '../../utils/object'
 import { pluckProps } from '../../utils/props'
@@ -25,7 +25,7 @@ export const props = {
 
 // --- Main component ---
 // @vue/component
-export const BBreadcrumbLink = /*#__PURE__*/ Vue.extend({
+export const BBreadcrumbLink = /*#__PURE__*/ defineComponent({
   name: 'BBreadcrumbLink',
   functional: true,
   props,

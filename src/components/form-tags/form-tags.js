@@ -1,6 +1,6 @@
 // Tagged input form control
 // Based loosely on https://adamwathan.me/renderless-components-in-vuejs/
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import KeyCodes from '../../utils/key-codes'
 import identity from '../../utils/identity'
 import looseEqual from '../../utils/loose-equal'
@@ -54,7 +54,7 @@ const cleanTagsState = () => ({
 })
 
 // @vue/component
-export const BFormTags = /*#__PURE__*/ Vue.extend({
+export const BFormTags = /*#__PURE__*/ defineComponent({
   name: NAME,
   mixins: [idMixin, normalizeSlotMixin],
   model: {

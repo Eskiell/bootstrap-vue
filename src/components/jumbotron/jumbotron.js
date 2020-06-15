@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 import { getComponentConfig } from '../../utils/config'
 import { htmlOrText } from '../../utils/html'
@@ -68,7 +68,7 @@ export const props = {
 
 // --- Main component ---
 // @vue/component
-export const BJumbotron = /*#__PURE__*/ Vue.extend({
+export const BJumbotron = /*#__PURE__*/ defineComponent({
   name: NAME,
   functional: true,
   props,
