@@ -17,6 +17,7 @@ hljs.registerLanguage('plaintext', require('highlight.js/lib/languages/plaintext
 
 // --- Constants ---
 
+const RX_EXCLUDE_EXTENSIONS = /\.(s?css|js|ts)$/
 const RX_CODE_FILENAME = /^\/\/ ([\w,\s-]+\.[A-Za-z]{1,4})\n/m
 
 const ANCHOR_LINK_HEADING_LEVELS = [2, 3, 4, 5]
@@ -33,9 +34,9 @@ const IS_PROD_DOCS =
 // Get routes by a given dir
 const getRoutesByDir = (root, dir, excludes = []) =>
   fs
-    .readdirSync(`${root}/${dir}`)
+    .readdirSync(`${[root, dir].filter(Boolean).join('/')}`)
     .filter(c => excludes.indexOf(c) === -1)
-    .filter(c => !/\.(s?css|js|ts)$/.test(c))
+    .filter(c => !RX_EXCLUDE_EXTENSIONS.test(c))
     .map(page => `/docs/${dir}/${page}`)
 
 // --- Custom renderer ---
@@ -189,6 +190,7 @@ module.exports = {
 
       config.resolveLoader.alias = config.resolveLoader.alias || {}
       config.resolveLoader.alias['marked-loader'] = path.join(__dirname, './utils/marked-loader')
+      config.resolveLoader.alias['docs-loader'] = path.join(__dirname, './utils/docs-loader')
 
       // Source maps make the bundles monstrous, do leave it off in prod mode
       if (isDev) {
@@ -198,6 +200,8 @@ module.exports = {
       config.module.rules.push({
         test: /\.md$/,
         use: [
+          // Loaders are handled last to first
+          { loader: 'docs-loader' },
           { loader: 'html-loader' },
           {
             loader: 'marked-loader',
@@ -268,7 +272,7 @@ module.exports = {
     routes: () => [
       // Dynamic slug routes
       ...getRoutesByDir('src', 'components'),
-      ...getRoutesByDir('src', 'directives', ['modal', 'toggle']),
+      ...getRoutesByDir('src', 'directives', ['modal']),
       ...getRoutesByDir('docs/markdown', 'reference')
     ]
   },
@@ -292,16 +296,18 @@ module.exports = {
   },
 
   // We only include a populated `sitemap.xml` in production docs
-  sitemap: {
-    // Sitemaps requires a hostname, so we use localhost in
-    // non-prod mode just to make the sitemap module happy
-    hostname: IS_PROD_DOCS ? BASE_URL : 'http://localhost',
-    // Exclude all static routes when not prod
-    // Exclude only redirect routes in prod
-    exclude: IS_PROD_DOCS ? ['/docs/misc', '/docs/misc/**', '/docs/layout'] : ['/', '/**'],
-    // Include dynamic slug routes (from `generate.routes`) in prod, while
-    // in non-prod docs we do not include dynamic routes (empty array)
-    ...(IS_PROD_DOCS ? {} : { routes: [] })
+  sitemap: () => {
+    // Don't generate a sitemap for non-production docs
+    if (!IS_PROD_DOCS) {
+      return false
+    }
+    return {
+      hostname: BASE_URL,
+      // Exclude any redirect pages from sitemaps
+      exclude: ['/docs/misc', '/docs/misc/**', '/docs/layout'],
+      // Default properties to apply to each URL entry
+      defaults: { changefreq: 'weekly', lastmod: new Date().toISOString() }
+    }
   },
 
   head: {
