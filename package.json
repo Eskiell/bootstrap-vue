@@ -93,7 +93,6 @@
     "@nuxt/opencollective": "^0.3.0",
     "bootstrap": ">=4.5.0 <5.0.0",
     "popper.js": "^1.16.1",
-    "portal-vue": "^2.1.7",
     "vue-functional-data-merge": "^3.1.0"
   },
   "devDependencies": {
@@ -110,6 +109,7 @@
     "@testing-library/jest-dom": "^5.10.1",
     "@vue/test-utils": "^1.0.3",
     "autoprefixer": "^9.8.0",
+    "@vue/compiler-sfc": "^3.0.0-alpha.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.0.1",
@@ -155,11 +155,10 @@
     "sass-loader": "^8.0.2",
     "standard-version": "^8.0.0",
     "terser": "^4.7.0",
-    "vue": "^2.6.11",
-    "vue-jest": "^3.0.5",
-    "vue-router": "^3.3.4",
     "vue-server-renderer": "^2.6.11",
-    "vue-template-compiler": "^2.6.11"
+    "vue": "^3.0.0-beta.1",
+    "vue-jest": "^5.0.0-alpha.0",
+    "vue-router": "^4.0.0-alpha.5"
   },
   "standard-version": {
     "scripts": {
