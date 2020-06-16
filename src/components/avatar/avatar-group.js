@@ -1,4 +1,4 @@
-import Vue from '../../utils/vue'
+import { defineComponent } from '../../utils/vue'
 import normalizeSlotMixin from '../../mixins/normalize-slot'
 import { mathMax, mathMin } from '../../utils/math'
 import { toFloat } from '../../utils/number'
@@ -9,7 +9,7 @@ const NAME = 'BAvatarGroup'
 
 // --- Main component ---
 // @vue/component
-export const BAvatarGroup = /*#__PURE__*/ Vue.extend({
+export const BAvatarGroup = /*#__PURE__*/ defineComponent({
   name: NAME,
   mixins: [normalizeSlotMixin],
   provide() {

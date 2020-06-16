@@ -98,7 +98,7 @@ const clampValue = (value, min, max) => mathMax(mathMin(value, max), min)
 
 // --- BFormRating ---
 // @vue/component
-export const BFormRating = /*#__PURE__*/ Vue.extend({
+export const BFormRating = /*#__PURE__*/ defineComponent({
   name: NAME,
   components: { BIconStar, BIconStarHalf, BIconStarFill, BIconX },
   mixins: [idMixin],

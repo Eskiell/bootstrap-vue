@@ -1,4 +1,4 @@
-import { defineComponent } from '../../utils/vue'
+import { defineComponent, h } from '../../utils/vue'
 import { mergeData } from 'vue-functional-data-merge'
 
 export const props = {
@@ -18,7 +18,7 @@ export const BContainer = /*#__PURE__*/ defineComponent({
   name: 'BContainer',
   functional: true,
   props,
-  render(h, { props, data, children }) {
+  render({ props, data, children }) {
     return h(
       props.tag,
       mergeData(data, {

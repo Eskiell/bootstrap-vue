@@ -4,6 +4,7 @@
 // TODO:
 //   Conditionally import Vue if no global Vue
 //
-import * as vue from 'vue'
+import Vue from 'vue'
 
-export default vue
+export default Vue
+export * from 'vue'
