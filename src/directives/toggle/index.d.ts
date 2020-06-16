@@ -1,7 +1,7 @@
 //
 // VBToggle
 //
-import Vue, { DirectiveArguments } from 'vue'
+import { DirectiveArguments } from 'vue'
 import { BvPlugin } from '../../'
 
 // Plugin
