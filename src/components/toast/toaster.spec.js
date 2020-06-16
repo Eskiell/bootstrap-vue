@@ -1,6 +1,5 @@
 import { mount } from '@vue/test-utils'
 import { createContainer, waitNT, waitRAF } from '../../../tests/utils'
-import { PortalTarget } from 'portal-vue'
 import { BToaster } from './toaster'
 
 describe('b-toaster', () => {
@@ -27,8 +26,7 @@ describe('b-toaster', () => {
 
     expect(wrapper.find('.b-toaster-slot').exists()).toBe(true)
     const $slot = wrapper.find('.b-toaster-slot')
-    expect($slot.findComponent(PortalTarget).exists()).toBe(true)
-    expect($slot.element.tagName).toBe('DIV')
+    expect($slot.is('div')).toBe(true)
     expect($slot.classes()).toContain('b-toaster-slot')
     expect($slot.classes()).toContain('vue-portal-target')
     expect($slot.classes().length).toBe(2)
@@ -60,8 +58,7 @@ describe('b-toaster', () => {
 
     expect(wrapper.find('.b-toaster-slot').exists()).toBe(true)
     const $slot = wrapper.find('.b-toaster-slot')
-    expect($slot.findComponent(PortalTarget).exists()).toBe(true)
-    expect($slot.element.tagName).toBe('DIV')
+    expect($slot.is('teleport')).toBe(true)
     expect($slot.classes()).toContain('b-toaster-slot')
     expect($slot.classes()).toContain('vue-portal-target')
     expect($slot.classes().length).toBe(2)

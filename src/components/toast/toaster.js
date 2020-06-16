@@ -1,8 +1,6 @@
 import { defineComponent } from '../../utils/vue'
-import { PortalTarget, Wormhole } from 'portal-vue'
 import { getComponentConfig } from '../../utils/config'
 import { removeClass, requestAF } from '../../utils/dom'
-import { warn } from '../../utils/warn'
 
 // --- Constants ---
 
@@ -80,21 +78,22 @@ export const BToaster = /*#__PURE__*/ defineComponent({
   },
   beforeMount() {
     this.staticName = this.name
+    // TODO: This needs to be converted to use teleport instead of vue-portal
     /* istanbul ignore if */
-    if (Wormhole.hasTarget(this.staticName)) {
-      warn(
-        `A "<portal-target>" with name "${this.name}" already exists in the document.`,
-        'BToaster'
-      )
-      this.dead = true
-    } else {
-      this.doRender = true
-      this.$once('hook:beforeDestroy', () => {
-        // Let toasts made with `this.$bvToast.toast()` know that this toaster
-        // is being destroyed and should should also destroy/hide themselves
-        this.$root.$emit('bv::toaster::destroyed', this.staticName)
-      })
-    }
+    // if (Wormhole.hasTarget(this.staticName)) {
+    //   warn(
+    //     `A "<portal-target>" with name "${this.name}" already exists in the document.`,
+    //     'BToaster'
+    //   )
+    //   this.dead = true
+    // } else {
+    this.doRender = true
+    this.$once('hook:beforeDestroy', () => {
+      // Let toasts made with `this.$bvToast.toast()` know that this toaster
+      // is being destroyed and should should also destroy/hide themselves
+      this.$root.$emit('bv::toaster::destroyed', this.staticName)
+    })
+    // }
   },
   destroyed() {
     // Remove from DOM if needed
@@ -106,12 +105,11 @@ export const BToaster = /*#__PURE__*/ defineComponent({
   render(h) {
     let $toaster = h('div', { class: ['d-none', { 'b-dead-toaster': this.dead }] })
     if (this.doRender) {
-      const $target = h(PortalTarget, {
+      const $target = h('div', {
         staticClass: 'b-toaster-slot',
         props: {
           name: this.staticName,
           multiple: true,
-          tag: 'div',
           slim: false,
           // transition: this.transition || DefaultTransition
           transition: DefaultTransition

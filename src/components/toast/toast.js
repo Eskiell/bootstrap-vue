@@ -1,5 +1,4 @@
 import { defineComponent } from '../../utils/vue'
-import { Portal, Wormhole } from 'portal-vue'
 import BVTransition from '../../utils/bv-transition'
 import { BvEvent } from '../../utils/bv-event.class'
 import { getComponentConfig } from '../../utils/config'
@@ -273,17 +272,18 @@ export const BToast = /*#__PURE__*/ defineComponent({
       if (this.static) {
         return
       }
-      if (!Wormhole.hasTarget(this.computedToaster)) {
-        const div = document.createElement('div')
-        document.body.appendChild(div)
-        const toaster = new BToaster({
-          parent: this.$root,
-          propsData: {
-            name: this.computedToaster
-          }
-        })
-        toaster.$mount(div)
-      }
+      // TODO: This needs to be updated to use teleport instead of vue-portal
+      // if (!Wormhole.hasTarget(this.computedToaster)) {
+      const div = document.createElement('div')
+      document.body.appendChild(div)
+      const toaster = new BToaster({
+        parent: this.$root,
+        propsData: {
+          name: this.computedToaster
+        }
+      })
+      toaster.$mount(div)
+      // }
     },
     startDismissTimer() {
       this.clearDismissTimer()
@@ -419,7 +419,7 @@ export const BToast = /*#__PURE__*/ defineComponent({
     const scopedStyleAttrs = !this.static ? this.scopedStyleAttrs : {}
 
     return h(
-      Portal,
+      'teleport',
       {
         props: {
           name: name,
