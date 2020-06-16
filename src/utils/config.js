@@ -1,13 +1,11 @@
-import Vue from './vue'
+import { reactive } from './vue'
 import cloneDeep from './clone-deep'
 import { getRaw } from './get'
 import memoize from './memoize'
 import DEFAULTS from './config-defaults'
 
 // --- Constants ---
-
-const PROP_NAME = '$bvConfig'
-const VueProto = Vue.prototype
+const config = reactive({})
 
 // --- Getter methods ---
 // All methods return a deep clone (immutable) copy of the config
@@ -15,14 +13,12 @@ const VueProto = Vue.prototype
 
 // Get the current user config. For testing purposes only
 export const getConfig = () => {
-  return VueProto[PROP_NAME] ? VueProto[PROP_NAME].getConfig() : {}
+  return config
 }
 
 // Method to grab a config value based on a dotted/array notation key
 export const getConfigValue = key => {
-  return VueProto[PROP_NAME]
-    ? VueProto[PROP_NAME].getConfigValue(key)
-    : cloneDeep(getRaw(DEFAULTS, key))
+  return config[key] === undefined ? config[key] : cloneDeep(getRaw(DEFAULTS, key))
 }
 
 // Method to grab a config value for a particular component
